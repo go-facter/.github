@@ -58,11 +58,15 @@ for Puppet manifests that reference either shape.
 
 ## Status
 
-**Engine complete.** Fact groups: `os` (incl. `os.macosx`), `kernel*`,
-`networking` (interfaces + bindings + primary), `processors`, `memory` (+swap),
-`mountpoints`, `filesystems`, `disks`, `virtual` / `is_virtual` (hypervisor and
-container detection), `system_uptime`, `timezone`, `identity`, `path`,
-`facterversion`, plus the flat legacy aliases. Custom facts (`Add` / `AddFunc`)
+**Engine complete — Facter 4 fact-set parity.** Fact groups: `os` (incl.
+`os.macosx`), `kernel*`, `networking` (interfaces + bindings + primary),
+`processors`, `memory` (+swap), `mountpoints`, `filesystems`, `disks`,
+`virtual` / `is_virtual` (hypervisor and container detection), `dmi`
+(bios / board / chassis / product), `ssh` host keys + SSHFP fingerprints,
+`selinux`, `load_averages`, `cloud` / `ec2_metadata`, `ruby`, `fips_enabled`,
+`aio_agent_version`, `augeasversion`, `env_windows_installdir`, `system_uptime`,
+`timezone`, `identity`, `path`, `facterversion`, plus the flat legacy aliases.
+Custom facts (`Add` / `AddFunc`)
 and external facts (`facts.d`: JSON / YAML / txt + executables). CLI `facter`
 prints the full set or a single dotted-path query as JSON/YAML. 100% coverage
 including error branches, `gofmt` + `go vet` clean, CI green on Linux, macOS and
